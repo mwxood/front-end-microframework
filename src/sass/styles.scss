@@ -1,0 +1,29 @@
+// Bootstrap imports
+@import "bootstrap/scss/bootstrap-grid";
+
+// Custom imports
+@import 'fonts';
+@import 'variables';
+@import 'helper';
+
+img {max-width: 100%;}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $bg-color;
+  color: $text-color;
+  font-family: $regular;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+p + p {
+  margin-top: 10px;
+}

@@ -1,0 +1,43 @@
+.custom-btn {
+  border-radius: 0;
+  text-decoration: none;
+  border: none;
+}
+
+.custom-input {
+  border-radius: 0;
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.container-fluid-custom {
+  margin: 0 auto;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.btn-icon {
+  margin-right: 10px;
+}
+
+.custom-container {
+  width: 90%;
+  margin: auto;
+  padding: 0 31px
+}
+
+.custom-btn {
+  background: $primary-color;
+  border: none;
+  transition: all .3s;
+  padding: 10px 20px;
+  i {
+    margin-left: 10px;
+  }
+  &:hover {
+      background: $footer-bottom;
+  }
+}
