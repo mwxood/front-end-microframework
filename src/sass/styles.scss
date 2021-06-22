@@ -2,7 +2,7 @@
 @import "bootstrap/scss/bootstrap-grid";
 
 // Custom imports
-@import 'fonts';
+
 @import 'variables';
 @import 'helper';
 
@@ -15,9 +15,7 @@ img {max-width: 100%;}
 }
 
 body {
-  background: $bg-color;
-  color: $text-color;
-  font-family: $regular;
+  font-family: 'Roboto', sans-serif;
 }
 
 p {
