@@ -11,20 +11,24 @@ const form = () => {
     const messageForm = document.querySelector('.message-form')
     const messageHolder = document.createElement('div')
     const messageClasses = ['alert', 'alert-danger']
-    messageHolder.classList.add(...messageClasses)
+    const successMessage = ['alert', 'alert-success']
+   
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const funnel = document.querySelector('#funnel')
 
     try {
         sendBtn.addEventListener('click', function(e) {
             e.preventDefault();
             
-        if(firstname.value.length ===  0 && lastname.value.length === 0 &&  phone.value.length === 0 &&  email.value.length === 0) {
+        if(firstname.value.length ===  0 || lastname.value.length === 0 ||  phone.value.length === 0 ||  email.value.length === 0) {
             firstname.classList.add('input-error')
             lastname.classList.add('input-error')
             phone.classList.add('input-error')
             email.classList.add('input-error')
+            messageHolder.classList.add(...messageClasses)
             messageForm.appendChild(messageHolder)
             messageHolder.innerText = 'All fields are required';
+            //messageHolder.classList.remove(...successMessage)
            
             return
         } else {
@@ -38,21 +42,15 @@ const form = () => {
             lastname.classList.remove('input-error')
             phone.classList.remove('input-error')
             email.classList.remove('input-error')
+            messageHolder.classList.remove(...messageClasses)
             messageHolder.remove()
         }
 
         const data = qs.stringify({
-        'email': email.value,
-        'first_name': firstname.value,
-        'last_name': lastname.value,
-        'phone': phone.value,
-        'funnel': 'bitcointrader',
-
         'first_name': firstname.value,
         'last_name':  lastname.value,
         'email': email.value,
-        'funnel': 'cryptocfdtrader',
-        'affid': '3',
+        'funnel': funnel.value,
         'phone': phone.value,
         })
 
@@ -69,6 +67,15 @@ const form = () => {
         axios(config)
         .then(function (response) {
         console.log(JSON.stringify(response.data))
+        firstname.value = ''
+        lastname.value = ''
+        email.value = ''
+        phone.value = ''
+        messageForm.appendChild(messageHolder)
+        messageHolder.classList.remove(...messageClasses)
+        messageHolder.classList.add(...successMessage)
+        messageHolder.innerText = 'Success!';
+
         })
         .catch(function (error) {
         console.log(error)
