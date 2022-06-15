@@ -1,6 +1,6 @@
 # Front-end microframework
 
-<h1>Microframework guide</h1>
+<h1>Guide how to use it</h1>
 
 <p>Download the project with gti:</p>
 <p>
