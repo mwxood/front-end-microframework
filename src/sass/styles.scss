@@ -1,6 +1,5 @@
 // Bootstrap imports
-@import "bootstrap/scss/bootstrap-grid";
-
+@import 'bootstrap/scss/bootstrap-grid';
 
 // Custom imports
 @import 'fonts';
@@ -8,68 +7,14 @@
 @import 'helper';
 
 //modules
-@import 'modules/custom-scroll';
-@import 'modules/header';
-@import 'modules/navigation';
-@import 'modules/header-responsive';
-@import 'modules/cart-button';
-@import 'modules/custom-checkbox';
-@import 'modules/custom-radio';
-@import 'modules/cart-button-responsive';
-@import 'modules/slider';
-@import 'modules/slider-responsive';
-@import 'modules/top-offers';
-@import 'modules/product';
-@import 'modules/product-responsive';
-@import 'modules/footer';
-@import 'modules/top-offers-responsive';
-@import 'modules/footer-responsive';
-@import 'modules/navigation-responsive';
-@import 'modules/modal';
-@import 'modules/breadcrumbs';
-@import 'modules/contact';
-@import 'modules/responsive-modal';
-@import 'modules/gallery';
-@import 'modules/tabs';
-@import 'modules/empty-page';
 
-img {max-width: 100%; vertical-align: middle;}
-  
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: $regular;
-  background: $bg url(../img/bg.jpg) no-repeat top center;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  flex: 1 0 auto;
-}
-
-.footer-content {
-  flex-shrink: 0;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-.content {
-  min-height: 100%;
-}
-
-p {
-  line-height: 1.5em;
-}
-
-p + p {
-  margin-top: 10px;
 }
