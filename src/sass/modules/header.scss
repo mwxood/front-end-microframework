@@ -1,0 +1,171 @@
+.header-bg {
+    background: $header-bg;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.header-inner {
+    @extend .flex-container;
+    .logo {
+        display: block;
+        padding-left: 16px;
+        padding-top: 13px;
+        padding-bottom: 10px;
+        @media (min-width: 1800px) {
+            width: 13%;
+        }
+    }
+
+    .header-right-col {
+        width: 87%;
+        @extend .flex-container;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+    
+    .phone-number {
+        font-family: $bold;
+        font-size: 29px;
+    }
+
+    .phone {
+        @extend .flex-container;
+        @extend .v-center;
+        flex-wrap: wrap;
+        color: #fff;
+        text-decoration: none;
+        margin-top: 15px;
+        max-width: 212px;
+        width: 100%;
+        margin-right: 48px;
+    }
+
+    .phone-icon {
+        margin-right: 4px;
+    }
+
+    .phone-desc {
+        font-family: $black;
+        font-size: 12px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        width: 100%;
+        text-indent: 5px;
+    }
+}
+
+.basket-btn {
+    background: $basket-bg;
+    padding: 27px 46px;
+    display: block; 
+    position: relative;
+    transition: all .3s ease;
+    height: 100%;
+    .basket-icon {
+        background: url('../img/top-basket-icon.png') no-repeat;
+        width: 24px;
+        height: 28px;
+        display: block;
+        transition: all .3s;
+        pointer-events: none;
+    }
+    &:hover, &.active-btn {
+        background: #fff;
+        .basket-icon {
+            background-position: 0px -40px;
+        }
+    }
+
+    .cart-count {
+        background: #ffba00;
+        color: #373b4a;
+        font-family: $bold;
+        font-size: 11px;
+        display: block;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        line-height: 14px;
+        text-align: center;
+        top: 45px;
+        left: 36px;
+    }
+}
+
+.menu-btn {
+    background: $nav-bg;
+    display: flex;
+    height: 100%;
+    padding: 34px 65px;
+    color: #fff;
+    text-decoration: none;
+    font-family: $black;
+    font-size: 12px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    &:hover {
+        background: $bg;
+    }
+}
+
+.nav-active {
+    .menu-btn {
+        background: $bg;
+    }
+
+    .hamburger {
+        margin-top: 7px;
+        span {
+            top: 0;
+            transform: rotate(-45deg);
+            background: #e6445b;
+            &:before {
+                display: none;
+            }
+            &:after {
+                top: 0;
+                transform: rotate(84deg);
+                background: #e6445b;
+            }
+        }
+       
+    }
+}
+
+.hamburger {
+    width: 12px;
+    position: relative;
+    margin-right: 11px;
+    margin-top: 3px;
+    span  {
+        position: absolute;
+        top: 4px;
+        background: #fff;
+        width: 12px;
+        height: 1px;
+        &:after, &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            background: #fff;
+            height: 1px;
+        }
+
+        &:before {
+            width: 7px;
+            top: -4px;
+            left: inherit;
+            right: 0;
+        }
+
+        &:after {
+            width: 12px;
+            top: 4px;
+        }
+    }
+}

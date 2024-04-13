@@ -1,0 +1,201 @@
+.cart-holder {
+    position: absolute;
+    right: 0;
+    top: 82px;
+    background: #fff;
+    padding: 32px 140px;
+    color: #373b4a;
+    max-width: 805px;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+    z-index: 1;
+    &.active-cart {
+        opacity: 1;
+        visibility: visible;
+        z-index: 3;
+    }
+
+    .price-bg {
+        @extend .flex-container;
+        margin-top: 20px;
+        align-items: center;
+        .order-price-holder {
+            margin-top: 0;
+        }
+        .order-quantity {
+            min-width: 86px;
+            width: 100%;
+        }
+    }
+
+    .cart-title {
+        font-size: 18px;
+        font-family: $bold;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        border-bottom: 1px solid $header-bg;
+        padding-bottom: 30px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .waiting-time {
+        @extend .flex-container;
+        border-bottom: 1px solid #bfbfbf;
+        padding-bottom: 17px;
+        margin-bottom: 15px;
+        font-size: 12px;
+        .clock-icon {
+            margin-right: 10px;
+        }
+    }
+
+    .order {
+        @extend .flex-container;
+        @extend .v-center;
+        margin-bottom: 23px;
+        &:last-child {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #bfbfbf;
+        }
+    }
+
+    .order-img {
+        margin-right: 21px;
+        img {
+            max-width: inherit;
+            width:  auto;
+        }
+    }
+
+    .order-price-holder {
+        @extend .flex-container;
+        align-items: center;
+    }
+
+    .order-name {
+        max-width: 110px;
+        width: 100%;
+        font-family: $bold;
+        font-size: 14px;
+        margin-right: 30px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .order-price {
+        font-size: 30px;
+        font-family: $bold;
+        color: $nav-bg;
+        margin-right: 30px;
+    }
+
+    .time {
+        color: #d24051;
+        font-family: $bold;
+        margin-left: 5px;
+    }
+
+    .order-clear {
+       
+        img {
+            max-width: inherit;
+            width: auto;
+            transition: all .3s ease;
+        }
+        &:hover {
+           img {
+            transform: rotate(-360deg);
+           }
+        }
+    }
+
+    .order-quantity {
+        max-width: 86px;
+        width: 100%;
+        margin-right: 45px;
+        @extend .flex-container;
+        justify-content: center;
+        position: relative;
+        height: 43px;
+        border: 1px solid #bfbfbf;
+        .minus-btn, .plus-btn {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 100%;
+            top: 0;
+            text-align: center;
+            line-height: 39px;
+            color: #333333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .minus-btn {
+            left: 0;
+        }
+        .plus-btn {
+            right: 0;
+        }
+        input {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            border: none;
+            width: 30px;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    .custom-checkbox {
+        margin-bottom: 20px;
+    }
+
+    .voucher-input {
+        display: none;
+        &.show-voucher {
+            display: block;
+        }
+    }
+
+    .order-total-holder {
+        margin-top: 32px;
+        margin-bottom: 58px;
+        .total-inner {
+            @extend .flex-container;
+            @extend .space-between;
+            margin-bottom: 38px;
+            .order-title {
+                font-size: 18px;
+                font-family: $bold;
+            }
+            .order-sum {
+                font-size: 18px;
+            }
+            .big-sum {
+                font-size: 32px;
+                font-family: $bold;
+                color: $nav-bg;
+            }
+        }
+    }
+
+    .order-client-info {
+        margin-bottom: 57px;
+        .cart-title {
+            margin-bottom: 30px;
+        }
+       
+    }
+
+    .payment-info {
+        .cart-title {
+            margin-bottom: 30px;
+        }
+    }
+}

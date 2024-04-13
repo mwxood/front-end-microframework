@@ -1,0 +1,23 @@
+.inner-wrap {
+    padding-top: 119px;
+    color: #fff;
+
+    h1, h2, h3, h4, h5, h6  {
+        margin-bottom: 20px;
+    }
+
+    p + p {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    h1 {font-size: 34px;}
+    h2 {font-size: 28px;}
+    h3 {font-size: 24px;}
+    h4 {font-size: 18px;}
+    h5 {font-size: 16px;}
+    h6 {font-size: 14px;}
+}

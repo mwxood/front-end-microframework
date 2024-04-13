@@ -1,0 +1,25 @@
+.modal {
+
+}
+
+@media(max-width: 1117px) {
+    .modal {
+        .close {
+            right: 10px;
+            top: 10px;
+            .icon-clear {
+                color: #333;
+            }
+        }
+    }  
+} 
+
+@media(max-width: 1000px) {
+    .modal {
+        min-width: inherit;
+        .col-custom {
+            flex: 100%;
+            max-width: 100%;
+        } 
+    } 
+}

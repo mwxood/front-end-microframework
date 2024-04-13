@@ -1,0 +1,62 @@
+@media(max-width: 860px) {
+    .menu-btn {
+        padding: 34px 20px;
+    }
+
+    .basket-btn {
+        padding: 34px 30px;
+        .cart-count {
+            left: 21px
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .header-inner {
+        .phone {
+            max-width: 164px;
+            margin-top: 20px;
+            margin-right: 0;
+        }
+
+        .phone-number{
+            font-size: 20px;  
+        }
+
+        .phone-desc {
+            letter-spacing: 4px;
+            text-indent: 16px;
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    .header-inner {
+        .phone{display: none;}
+    }
+}
+
+@media(max-width: 500px) {
+    .header-inner {
+        .logo {
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+        }
+    }
+}
+
+@media(max-width: 396px) {
+    .header-inner .logo {
+        padding: 0 10px;
+    }
+    .menu-btn {
+        padding: 33px 5px;
+    }
+    .basket-btn {
+        img {
+            max-width: inherit;
+            width: auto;
+        }
+    }
+}

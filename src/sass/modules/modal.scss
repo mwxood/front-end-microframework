@@ -1,0 +1,103 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    max-width: 980px;
+    min-width: 980px;
+    min-height: 50%;
+    z-index: 11;
+    display: none;
+    .modal-body {
+      padding: 37px 30px;
+    }
+
+    .modal--btn-holder {
+      padding: 0 10px;
+    }
+
+    .modal-products {
+      padding: 0 10px;
+      max-height: 457px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  
+    &.open-modal {
+      display: block;
+    }
+  
+    .modal-title {
+      font-size: 16px;
+      @extend .flex-container;
+      justify-content: center;
+      margin-bottom: 38px;
+      .modal-title-icon {
+        margin-right: 11px;
+      }
+    }
+    .add-more {
+      font-family: $bold;
+      color: #333;
+      text-decoration: none;
+      @extend .flex-container;
+      justify-content: center;
+      margin-bottom: 30px;
+      position: relative;
+      span {
+        background: #fff;
+        display: inline-block;
+        padding: 0 8px;
+        position: relative;
+        z-index: 1;
+      }
+      &:after, &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50);
+        height: 1px;
+        width: 50%;
+        background: #bfbfbf;
+      }
+      &:after {
+        left: 0;
+      }
+      &:before {
+        right: 0;
+      }
+    }
+
+    .product {
+      &:hover {
+        .prod-btn {
+          color: #fff;
+        }
+        .prod-icon {
+          background-position: 0px -26px;
+        }
+      }
+    }
+
+    .product .prod-btn {
+      color: #0c0c10;
+    }
+
+    .product .prod-icon {
+      background: url('../img/basket-hover-modal.png') no-repeat;
+    }
+
+    .close {
+      position: absolute;
+      right: -30px;
+      top: -30px;
+      cursor: pointer;
+      .icon-clear {
+        font-size: 28px;
+        color: #fff;
+      }
+    }
+  }
+  

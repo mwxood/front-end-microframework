@@ -1,0 +1,13 @@
+.tab-content {
+    padding-right: 20px;
+    display: none;
+    &.active-tab {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-content {
+        padding-bottom: 80px;
+    }
+}
