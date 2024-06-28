@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Step 2: Import html-webpack-plugin
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -14,19 +15,19 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
-      },
+      // Existing rules
+      // {
+      //   test: /\.js$/,
+      //   exclude: /(node_modules)/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: ['@babel/preset-env'],
+      //     },
+      //   },
+      // },
       {
         test: /\.scss$/,
-
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -46,11 +47,9 @@ module.exports = {
         ],
       },
       {
-        // Apply rule for fonts files
         test: /\.(woff|woff2|ttf|otf|eot)$/,
         use: [
           {
-            // Using file-loader too
             loader: 'file-loader',
             options: {
               publicPath: '../fonts',
@@ -59,18 +58,25 @@ module.exports = {
           },
         ],
       },
-
       {
-        // Now we apply rule for img
-        test: /\.(png|jpe?g|gif|svg)$/,
+       // test: /\.(png|jpe?g|gif|svg)$/,
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       outputPath: 'img',
+        //       publicPath: '../img',
+        //     },
+        //   },
+        // ],
+      },
+      {
+        test: /\.html$/, // Step 3: Add a new rule for .html files
         use: [
           {
-            loader: 'file-loader',
+            loader: 'html-loader',
             options: {
-              outputPath: 'img',
-              //   path: path.resolve(__dirname, './img'),
-              publicPath: '../img',
-              // path: path.resolve(__dirname, 'img'),
+              minimize: true, // Enable minification
             },
           },
         ],
@@ -79,10 +85,14 @@ module.exports = {
   },
 
   plugins: [
+    // Existing plugins
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: 'css/[name].bundle.css',
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index-source.html'), // Correct path to your source HTML file in the root directory
+      filename: path.resolve(__dirname, 'index.html'), // Specify the output path relative to the `output.path` directory
+      minify: true, // Ensure the output is minified
     }),
   ],
 
